@@ -1,0 +1,6 @@
+get height from user
+
+loop (i) on heihgts
+    loop with i repeations
+        print block
+jump one line
