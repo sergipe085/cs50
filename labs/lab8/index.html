@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+
+            var isSec01 = false;
+            var isSec02 = false;
+
+            //part01
+            document.addEventListener("DOMContentLoaded", () => {
+                const trueButton = document.querySelector(".part1.true");
+                const falseButtons = document.querySelectorAll(".part1.false");
+
+                trueButton.addEventListener("click", () => {
+                    if (isSec01) return;
+                    document.querySelector(".result").innerHTML = "Correct!";
+                    trueButton.style.backgroundColor = "#90EE90";
+                    isSec01 = true;
+                });
+
+                falseButtons.forEach((element) => {
+                    element.addEventListener("click", () => {
+                        if (isSec01) return;
+                        document.querySelector(".result").innerHTML = "Incorrect";
+                        element.style.backgroundColor = "#FF6961";
+                        isSec01 = true;
+                    });
+                });
+            });
+
+            //part02
+            const response = "384400";
+
+            function confirmResponse(res, userInput) {
+                if (isSec02 == true) return;
+
+                if (res == "") {
+                    document.querySelector(".part2.result").innerHTML = "Invalid Response!";
+                    return;
+                }
+
+                const resultFeedBack = document.querySelector(".part2.result");
+                if (res == response) {
+                    userInput.style.color = "#90EE90";
+                    resultFeedBack.innerHTML = "Correct!";
+                }
+                else {
+                    userInput.style.color = "#FF6961";
+                    resultFeedBack.innerHTML = "Incorrect";
+                }
+
+                var att = document.createAttribute("disabled");
+                userInput.setAttributeNode(att);
+
+                isSec02 = true;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("#confirm").addEventListener("click", () => {
+                    const userInput = document.querySelector("#inputQuiz2");
+                    const inputFormated = userInput.value.toLowerCase().replace(".", "").replace(",", "").replace(" ", "");
+                    confirmResponse(inputFormated, userInput);
+                })
+            })
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many millimeters does Mount Everest grow each year?</h3>
+                <p class="result">Waiting for response...</p>
+
+                <button class="part1 false">4mm</button>
+                <button class="part1 false">1mm</button>
+                <button class="part1 true">3mm</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>what is the distance, in kilometers, from the earth to the moon?</h3>
+                <p class="part2 result">Waiting for response...</p>
+
+                <input id="inputQuiz2" placeholder="Enter your answer here"></input>
+                <button id="confirm">Confirm</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>
