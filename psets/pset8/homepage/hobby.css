@@ -1,0 +1,29 @@
+.favoritehobby {
+    font-size: 1rem;
+    padding-top: 6rem;
+    padding-left: 8rem;
+}
+
+.favoritehobby div video {
+    display: inline-block;
+    grid-auto-rows: 2;
+}
+
+.favoritehobby div p {
+    display: inline-block;
+    width: 350px;
+    position: relative;
+    padding-left: 15px;
+}
+
+main h1 {
+    margin-bottom: 4rem;
+}
+
+a {
+    transition: color 0.1s;
+}
+
+a:hover {
+    color: white;
+}

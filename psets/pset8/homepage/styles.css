@@ -1,0 +1,61 @@
+body, html {
+    height: 100%;
+    /*
+    background-image: url('background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -60px;
+    */
+    background-color: #57565b;
+}
+
+main {
+    font-size: 3rem;
+    color: white;
+    height: 100%;
+}
+
+header nav {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+header nav img {
+    width: 3rem;
+}
+
+a {
+    transition: color 0.35s ease;
+}
+
+.mainText {
+    font-size: 6rem;
+    justify-items: left;
+    padding-left: 8rem;
+    padding-top: 6rem;
+    line-height: 6.5rem;
+}
+
+.mainButtons {
+    display: flex;
+    padding-left: 8rem;
+}
+
+.mainButtons input {
+    outline: none;
+    background-color: #c4c0be;
+    color: #1c1c1c;
+    width: 7.5rem;
+    height: 3rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: medium;
+    font-weight: 600;
+    margin-right: 35px;
+    margin-top: 4rem;
+    
+    transition: background-color 0.6s ease;
+}
+
+.mainButtons input:hover {
+    background-color: white;
+}
